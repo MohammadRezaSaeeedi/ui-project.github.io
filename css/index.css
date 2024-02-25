@@ -1,0 +1,109 @@
+body{
+    /* max-width: 1000px; */
+    margin: auto;
+    height: 768px;
+    text-align: center;
+    padding-top: 150px;
+    background: rgb(211,228,255);
+    background: linear-gradient(118deg, rgba(211,228,255,1) 20%, rgba(99,97,255,1) 54%, rgba(141,201,255,1) 77%);
+}
+h1{
+    font-size: 4rem;
+    background-color: transparent;
+    /* color:#87CEFA; */
+    color: #FFFFFF;
+    filter: drop-shadow(5px 5px 25px #FFFFFF );
+    
+}
+h1:hover {
+    /* color:#87BFFA; */
+    color: #000000;
+    filter: drop-shadow(5px 5px 25px #000000 );
+
+}
+.input{
+    background-color: #cfecfd;
+    padding-left: 15px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border:3px solid #7068ddb4;
+    color: #000000;
+    box-shadow: 1.5px 2px 25px  #FFFFFF;
+    outline: none;
+    -webkit-text-fill-color: #000000;
+}
+.input_email{
+    margin-top: 60px;
+    /* width: 500px; */
+    width: 350PX;
+ 
+}
+.name_and_lastname{
+    background-color: transparent;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.name{
+    /* width: 248px; */
+    width: 170PX;
+}
+.password{
+    background-color: transparent;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    
+}
+.input_password{
+    /* width: 500px; */
+    width: 350px;
+}
+.password2{
+    margin-top:30px;
+    
+}
+#button_next{
+    margin-top: 50px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    box-shadow: 1.5px 2px 25px  #FFFFFF;
+    border:3px solid #7068ddb4;
+    background-color: #cfecfd;
+    cursor: pointer;
+
+}
+#button_next:hover{
+    background-color:rgba(99,97,255,1);
+    color: #FFFFFF;
+}
+
+#go_login{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+#go_login p{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+#go_login a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 8px;
+    color: #0000FF;
+}
+#go_login a:hover{
+    color: #FFFFFF;
+    filter: drop-shadow(5px 5px 25px #FFFFFF);
+}
+.aba{
+    color:#000000;
+}

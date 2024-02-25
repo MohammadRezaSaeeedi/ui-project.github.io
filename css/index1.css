@@ -15,10 +15,8 @@ h1{
     
 }
 h1:hover {
-    /* color:#87BFFA; */
     color: #000000;
     filter: drop-shadow(5px 5px 25px #000000 );
-
 }
 .input{
     background-color: #FFFFFF;
@@ -35,51 +33,47 @@ h1:hover {
 }
 .input_email{
     margin-top: 60px;
-    /* width: 500px; */
     width: 350PX;
- 
 }
 .name_and_lastname{
     background-color: transparent;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 .name{
-    /* width: 248px; */
-    width: 170PX;
+    width: 173PX;
 }
 .password{
     background-color: transparent;
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items:center;
     
 }
 .input_password{
-    /* width: 500px; */
     width: 350px;
 }
 .password2{
-    margin-top:30px;
+    margin-top:15px;
     
 }
 #button_next{
-    margin-top: 50px;
+    margin-top: 25px;
     width: 100px;
     height: 40px;
     line-height: 40px;
     border-radius: 8px;
     font-size: 1.3rem;
     font-weight: 400;
-    box-shadow: 1.5px 2px 4px  #000000;
+    box-shadow: 1.5px 2px 8px  #000000;
     border:1px solid #000000;
     background-color: #FFFFFF;
     cursor: pointer;
 
 }
 #button_next:hover{
-    background-color:#ccc5c5b0;
+    background-color:#7a7070b0;
     color: #FFFFFF;
 }
 

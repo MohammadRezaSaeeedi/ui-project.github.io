@@ -11,25 +11,59 @@ body{
     height: 768px; 
     padding-top: 50px;
     cursor: pointer;
-    display: none;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   position: relative;
+
 }
-.add_buckets button{
+@keyframes rotation{
+  10%{fill:#FFC312; }
+  20%{fill:#C4E538;}
+  30%{fill:#12CBC4;}
+  40%{fill:#FDA7DF;}
+  50%{fill:#ED4C67;}
+  60%{fill:#F79F1F;}
+  70%{fill:#A3CB38;}
+  80%{fill:#D980FA;}
+  90%{fill:#EA2027;}
+  100%{fill:#1B1464;}
+  }
+
+.add_buckets svg {
+    width: 75px;
+    height: 150px;
+    fill: #00000034;
+   
+  
+}
+.add_buckets .svg{
+    animation: rotation 5s linear infinite;
+}
+.add_buckets h2 {
+    font-size: 3rem;
+    color:#00000034 ;
+    
+}
+.add_buckets button {
     text-align: center;
-    font-size: 400px;
     color: #00000034;
     border: none;
     background-color: initial;
     cursor: pointer;
-    text-shadow: 1px 2px 8px #00000011;
+   
 }
+
 .box_buckets{
     display: grid;
-    grid-template-columns: repeat(4,auto) ;
+    grid-template-columns: repeat(2,auto) ;
+    justify-content: space-around;
 }
 .buckets{
     width: 330px;
     height: 600px;
     margin:-130px 15px 0 15px;
+    display: none;
 }
 table{
     display: flex;

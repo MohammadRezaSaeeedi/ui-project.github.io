@@ -5,7 +5,9 @@ body{
     padding-top: 150px;
     background-color: #FFFFFF;
 }
+
 .add_buckets{
+    
     background-color: #4942420c;
     margin-top: -150px;
     height: 768px; 
@@ -17,17 +19,21 @@ body{
    position: relative;
 
 }
+@keyframes ch-color{
+    10%{fill:#FFC312; }
+    20%{fill:#C4E538;}
+    30%{fill:#12CBC4;}
+    40%{fill:#FDA7DF;}
+    50%{fill:#ED4C67;}
+    60%{fill:#F79F1F;}
+    70%{fill:#A3CB38;}
+    80%{fill:#D980FA;}
+    90%{fill:#EA2027;}
+    100%{fill:#1B1464;}
+}
 @keyframes rotation{
-  10%{fill:#FFC312; }
-  20%{fill:#C4E538;}
-  30%{fill:#12CBC4;}
-  40%{fill:#FDA7DF;}
-  50%{fill:#ED4C67;}
-  60%{fill:#F79F1F;}
-  70%{fill:#A3CB38;}
-  80%{fill:#D980FA;}
-  90%{fill:#EA2027;}
-  100%{fill:#1B1464;}
+from{transform: rotateY(0deg)}
+to{transform: rotateY(360deg)}
   }
 
 .add_buckets svg {
@@ -38,12 +44,15 @@ body{
   
 }
 .add_buckets .svg{
-    animation: rotation 5s linear infinite;
+    animation: ch-color 4s linear infinite;
+}
+.svg_arrow{
+    animation: rotation 2s linear infinite;
 }
 .add_buckets h2 {
     font-size: 3rem;
     color:#00000034 ;
-    
+ 
 }
 .add_buckets button {
     text-align: center;
@@ -52,6 +61,43 @@ body{
     background-color: initial;
     cursor: pointer;
    
+}
+#titel_of_buckets{
+    margin-top: -150px;
+    height: 600px;
+    display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+display: none;
+  
+   
+}
+.input_titel{
+width: 250px;
+line-height: 40px;
+background-color: #FFFFFF;
+padding-left: 15px;
+height: 40px;
+font-size: 1.2rem;
+border-radius: 8px;
+border:1px solid #00000024;
+color: #000000;
+font-weight: 500;
+box-shadow: 1px 2px 8px  #00000073;
+outline: none;
+-webkit-text-fill-color: #00000099;
+}
+#svg_add_titel{
+    width: 25px;
+    height: 25px;
+    fill: #00000034;
+    position: relative;
+    right: 38px;
+    cursor: pointer;
+}
+#svg_add_titel:hover{
+    fill: #000000;
 }
 
 .box_buckets{

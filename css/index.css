@@ -62,18 +62,14 @@ to{transform: rotateY(360deg)}
     cursor: pointer;
    
 }
-#titel_of_buckets{
-   margin-top: 150px; 
+#title_of_buckets{
+    width: auto;
     height: 600px;
-    display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-display: none;
+display: none; 
   
    
 }
-.input_titel{
+.input_title{
 width: 250px;
 line-height: 40px;
 background-color: #FFFFFF;
@@ -88,7 +84,7 @@ box-shadow: 1px 2px 8px  #00000073;
 outline: none;
 -webkit-text-fill-color: #00000099;
 }
-#svg_add_titel{
+#svg_add_title{
     width: 25px;
     height: 25px;
     fill: #00000034;
@@ -97,9 +93,31 @@ outline: none;
     top: 6px;
     cursor: pointer;
 }
-#svg_add_titel:hover{
+#svg_add_title:hover{
     fill: #000000;
 }
+.alert_message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: -25px;
+  }
+  .alert{
+    width: 240px;
+    height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 30px;
+  }
+  .alert_success {
+    background-color: #33FF55;
+    
+  }
+  .alert_error {
+    background-color: #fa295aa6;
+   
+  }
 
 .box_buckets{
     display: grid;
@@ -118,7 +136,7 @@ table{
     justify-content: center;
     align-items: center;
 }
-.titel{
+.title{
    width: 330px;
    height: 30px;
    background-color: #00000093; 

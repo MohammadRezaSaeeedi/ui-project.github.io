@@ -101,7 +101,10 @@ outline: none;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    margin-left: -25px;
+    margin-left: -28px;
+    position: relative;
+    top: -560px;
+    
   }
   .alert{
     width: 240px;
@@ -120,15 +123,15 @@ outline: none;
   }
 
 .box_buckets{
-    display: grid;
-    grid-template-columns: repeat(2,auto) ;
+    display:grid;
+    grid-template-columns: repeat(100,auto);
     justify-content: space-around;
 }
-.buckets{
+.table_buckets{
     width: 330px;
     height: 600px;
     margin:-130px 15px 0 15px;
-    display: none;
+
 }
 table{
     display: flex;

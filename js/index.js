@@ -1,11 +1,11 @@
 const buttonAddBuckets = document.getElementById("add_buckets");
-const title = document.getElementById("title_of_buckets");
+const inputTitle = document.getElementById("title_of_buckets");
 const addInput = document.getElementById("input_title");
 const svgAddInput = document.getElementById("svg_add_title");
 const alertMessage = document.getElementById("alert_message");
-const buckets = document.getElementById("buckets");
+const tableBuckets = document.getElementById("box_buckets");
 
-let titles = JSON.parse(localStorage.getItem("titles")) || [];
+let buckets = JSON.parse(localStorage.getItem("titles")) || [];
 
 const generateId = () => {
   return Math.round(
@@ -13,27 +13,45 @@ const generateId = () => {
   ).toString();
 };
 const saveToLocalStorage = () => {
-  localStorage.setItem("titles", JSON.stringify(titles));
+  localStorage.setItem("titles", JSON.stringify(buckets));
 };
 
+const displayBuckets = (data) => {
+  const bucketsList = data || buckets;
+  tableBuckets.innerHTML = "";
+  bucketsList.forEach((buckets) => {
+    tableBuckets.innerHTML += `
+ <div class="table_buckets">
+  <div><table>
+  <thead class="t_head"><tr><th class="title">${
+    buckets.nameTitle
+  }</th><tr><thead>
+  <tbody class="t_body"><tr><td class="tasks">${
+    buckets.task || "No task found!"
+  }</td></tr><tbody>
+  </table>
+  <p class="end_buckets"</p>
+  </div></div>`;
+  });
+};
 const addBucketsHandler = () => {
   buttonAddBuckets.style.display = "none";
-  title.style.display = "block";
+  inputTitle.style.display = "block";
 };
 const addtitleHandler = () => {
   const task = addInput.value;
   const title = {
     id: generateId(),
-    tasktitle: task,
+    nameTitle: task,
   };
-  if (title.tasktitle !== "" ) {
-    titles.push(title);
+  if (title.nameTitle !== "") {
+    buckets.push(title);
+    tableBuckets.innerHTML;
     saveToLocalStorage();
     addInput.value = "";
-    // title.style.display = "none"
-    // buckets.style.display = "block";
-
+    inputTitle.style.display = "none";
     showalert("title added successfully", "success");
+    displayBuckets();
   } else {
     showalert("please enter a title!", "error");
   }

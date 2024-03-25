@@ -152,6 +152,14 @@ tbody tr {
     display:flex;
     flex-direction: column;
 }
+.task{
+    width: 326px;
+    height: 30px;
+    background-color: #47464677;
+    margin-bottom: 2px;
+    line-height: 30px;
+    box-shadow: 1px 1px 3px  #0000003b;
+}
 .tasks{
     width: 326px;
     height: 30px;
@@ -159,6 +167,15 @@ tbody tr {
     margin-bottom: 2px;
     line-height: 30px;
     box-shadow: 1px 1px 3px  #0000003b;
+}
+.input_tasks{
+    width: 326px;
+    height: 30px;
+    background-color: #f4e8e8dd;
+    margin-bottom: 2px;
+    outline: none;
+    border: 1px solid #47464677;
+    padding-left: 8px;
 }
 .end_buckets{
     width: 326px;
@@ -168,7 +185,23 @@ tbody tr {
     border-bottom-right-radius: 68px;
     box-shadow: 1px 1px 3px  #0000003b;
     margin-left: 2px;
+    position: relative;
 }
+
+.arrow_input{
+    height: 10px;
+    padding-left: 7px;
+}
+.svg_add_tasks{
+    height: 15px;
+    position: absolute;
+    left:160px;
+    top: 7px;   
+    cursor: pointer;
+    
+}
+
+
 h1{
     font-size: 4rem;
     background-color: transparent;

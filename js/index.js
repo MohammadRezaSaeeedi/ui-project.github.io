@@ -16,7 +16,8 @@ const generateId = () => {
   ).toString();
 };
 const loadFromLocalStorage = (default_key = "page_data") => {
-  return JSON.parse(localStorage.getItem(default_key)) || [];
+
+  return JSON.parse(localStorage.getItem(default_key)) || [] ;
 };
 const saveToLocalStorage = (buckets, default_key = "page_data") => {
   localStorage.setItem(default_key, JSON.stringify(buckets));
@@ -30,22 +31,19 @@ const inputTasksHandler = (event) => {
   const current_bucket_id = event.srcElement.getAttribute("data-id");
 
   buckets.map((bucket) => {
-    // console.log(id, bucket);
     if (bucket.id === current_bucket_id) {
-      if (!bucket.tasks) bucket.tasks = [];
+      if (!bucket.tasks) {
+        bucket.tasks = [];
       const new_task = {
         task_id: generateId(),
         bucket_id: bucket.id,
-        name: value_task,
+        name: value_task,}
+        bucket.tasks.push(new_task);
+        saveToLocalStorage(buckets);
+        event.target.value = "";
+        loadHandler();
       };
 
-      bucket.tasks.push(new_task);
-      // buckets[bucket.index] = new_bucket_object;
-      // console.log(buckets);
-      // buckets.push(new_task)
-      saveToLocalStorage(buckets);
-      event.target.value = "";
-      loadHandler();
     }
   });
 };
@@ -113,16 +111,18 @@ const displayBuckets = () => {
 };
 const addTitleHandler2 = (event) => {
   const new_title = event.target.value;
-  const title = {
+  const page_data = {
     id: generateId(),
     nameTitle: new_title,
+
   };
-  if (title.nameTitle !== "") {
-    buckets.push(title);
+  if (page_data.nameTitle !== "") {
+    buckets.push(page_data);
     tableBuckets.innerHTML;
-    saveToLocalStorage();
+    saveToLocalStorage(buckets);
     event.target.value = "";
-    loadHandler();}
+    loadHandler();
+  }
 
 }
 const addBucketsHandler = () => {
@@ -132,18 +132,19 @@ const addBucketsHandler = () => {
 
 const addTitleHandler = () => {
   const task = addInput.value;
-  const title = {
+  const page_data = {
     id: generateId(),
     nameTitle: task,
   };
-  if (title.nameTitle !== "") {
-    buckets.push(title);
+  if (page_data.nameTitle !== "") {
+    buckets.push(page_data);
     tableBuckets.innerHTML;
-    saveToLocalStorage();
+    saveToLocalStorage(buckets);
     addInput.value = "";
     inputTitle.style.display = "none";
     showalert("title added successfully", "success");
     displayBuckets();
+    loadFromLocalStorage();
   } else {
     showalert("please enter a title!", "error");
   }

@@ -5,7 +5,6 @@ const svgAddInput = document.getElementById("svg_add_title");
 const alertMessage = document.getElementById("alert_message");
 const tableBuckets = document.getElementById("box_buckets");
 // const inputTasks = document.getElementsByClassName("input_tasks");
-
 const generateNumber = () => {
   return Math.round(
     Math.random() * Math.random() * Math.random(1, 1000) * 1000 * 100000
@@ -75,32 +74,63 @@ const displayBuckets = () => {
     table.append(tbody);
     const tr1 = document.createElement("tr");
     tbody.append(tr1);
+    if(bucket.tasks){
     bucket.tasks.map((bucket_task) => {
       const task = document.createElement("td");
       task.classList.add("task");
       task.innerHTML = bucket_task.name;
       tr1.appendChild(task);
-    });
+    });}
+      const task_input = document.createElement("input");
+      task_input.classList.add("input_tasks");
+      task_input.setAttribute("data-id", bucket.id);
+      task_input.placeholder = "Enter a new task ...";
+      task_input.onchange = inputTasksHandler;
+      div2.appendChild(task_input);
+      const p2 = document.createElement("p");
+      p2.classList.add("end_buckets");
+      div2.append(p2);
+    
 
-    const task_input = document.createElement("input");
-    task_input.classList.add("input_tasks");
-    task_input.setAttribute("data-id", bucket.id);
-    task_input.placeholder = "Enter a new task ...";
-    task_input.onchange = inputTasksHandler;
-    div2.appendChild(task_input);
-    const p2 = document.createElement("p");
-    p2.classList.add("end_buckets");
-    div2.append(p2);
   });
-  
+  const divTabel2 = document.createElement("div");
+    divTabel2.classList.add("table_buckets");
+    tableBuckets.append(divTabel2);
+    const div2 = document.createElement("div");
+    divTabel2.append(div2);
+    const table = document.createElement("table");
+    div2.append(table);
+    const thead = document.createElement("thead");
+    thead.classList.add("t_head");
+    table.append(thead);
+    const tr = document.createElement("tr");
+    thead.append(tr);
+    const input_title = document.createElement("input");
+    input_title.classList.add("input_title_2");
+    input_title.placeholder = "Enter a new title ...";
+    input_title.onchange = addTitleHandler2; 
+    tr.appendChild(input_title)
 };
+const addTitleHandler2 = (event) => {
+  const new_title = event.target.value;
+  const title = {
+    id: generateId(),
+    nameTitle: new_title,
+  };
+  if (title.nameTitle !== "") {
+    buckets.push(title);
+    tableBuckets.innerHTML;
+    saveToLocalStorage();
+    event.target.value = "";
+    loadHandler();}
 
+}
 const addBucketsHandler = () => {
   buttonAddBuckets.style.display = "none";
   inputTitle.style.display = "block";
 };
 
-const addtitleHandler = () => {
+const addTitleHandler = () => {
   const task = addInput.value;
   const title = {
     id: generateId(),
@@ -136,5 +166,5 @@ const showalert = (message, type) => {
   }, 2000);
 };
 window.addEventListener("load", loadHandler);
-svgAddInput.addEventListener("click", addtitleHandler);
+svgAddInput.addEventListener("click", addTitleHandler);
 buttonAddBuckets.addEventListener("click", addBucketsHandler);

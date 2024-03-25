@@ -187,7 +187,18 @@ tbody tr {
     margin-left: 2px;
     position: relative;
 }
-
+ .input_title_2{
+    width: 326px;
+    height: 30px;
+    background-color: #f4e8e8dd;
+    margin-bottom: 2px;
+    outline: none;
+    border: 1px solid #47464677;
+    padding-left: 8px;
+    border-top-left-radius: 68px;
+   border-top-right-radius: 68px;
+   padding-left: 20px;
+ }
 .arrow_input{
     height: 10px;
     padding-left: 7px;

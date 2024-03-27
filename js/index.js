@@ -4,7 +4,7 @@ const addInput = document.getElementById("input_title");
 const svgAddInput = document.getElementById("svg_add_title");
 const alertMessage = document.getElementById("alert_message");
 const tableBuckets = document.getElementById("box_buckets");
-// const inputTasks = document.getElementsByClassName("input_tasks");
+
 const generateNumber = () => {
   return Math.round(
     Math.random() * Math.random() * Math.random(1, 1000) * 1000 * 100000
@@ -34,6 +34,7 @@ const inputTasksHandler = (event) => {
     if (bucket.id === current_bucket_id) {
       if (!bucket.tasks) {
         bucket.tasks = [];
+      }
       const new_task = {
         task_id: generateId(),
         bucket_id: bucket.id,
@@ -42,7 +43,7 @@ const inputTasksHandler = (event) => {
         saveToLocalStorage(buckets);
         event.target.value = "";
         loadHandler();
-      };
+      
 
     }
   });
